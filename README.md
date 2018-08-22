@@ -64,10 +64,10 @@ The error is calculated using the below formula at every iteration. The derivati
 
 Then we negate the parameter gradient from each parameter, adjusted by learning rate. We use this formula, params = params - learning rate * params_gradient.
 
-RMSE LowK SGD = 11.1
-RMSE of SGD   = 2.67
-RMSE of GD    = 4.42
-Percentage change in Weight Vectors from GD to SGD = 0.2%
+RMSE LowK SGD = 11.1 <br/>
+RMSE of SGD   = 2.67 <br/>
+RMSE of GD    = 4.42 <br/>
+Percentage change in Weight Vectors from GD to SGD = 0.2% <br/>
 
 ![hc1](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/hc1.PNG)
 
@@ -83,10 +83,10 @@ RMSE = 5.31
 
 ### Timing Comparison of SGD, Batch GD, SKlearn & Low K SGD ###
 
-Time Taken by Low K SGD is 1.68 seconds when k = 5
-Time Taken by SGD is 1.75 seconds when k = 10
-Time Taken by Batch GD is 1.96 seconds when k = 339
-Time Taken by Sklearn OLS is 0.0 seconds
+Time Taken by Low K SGD is 1.68 seconds when k = 5 <br/>
+Time Taken by SGD is 1.75 seconds when k = 10 <br/>
+Time Taken by Batch GD is 1.96 seconds when k = 339 <br/>
+Time Taken by Sklearn OLS is 0.0 seconds <br/>
 
 ### Error Comparison of SGD, Batch GD & Sklearn’s OLS ###
 
