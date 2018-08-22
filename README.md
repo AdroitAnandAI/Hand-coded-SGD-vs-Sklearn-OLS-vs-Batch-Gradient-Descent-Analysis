@@ -21,13 +21,13 @@ Boston Dataset from Sklearn Datasets.
 
 ### Dataset Details on Boston House Prices ###
 
-__Characteristics:__
+*Characteristics:*
 
 Number of Instances: 506
 Number of Attributes: 13 numeric/categorical predictive
 Median Value (attribute 14) is usually the target
 
-__Attribute Information (in order):__
+*Attribute Information (in order):*
 
 - CRIM per capita crime rate by town
 - ZN proportion of residential land zoned for lots over 25,000 sq.ft.
@@ -44,16 +44,16 @@ __Attribute Information (in order):__
 - LSTAT % lower status of the population
 - MEDV Median value of owner-occupied homes in $1000's
 
-__Missing Attribute Values:__ None
+*Missing Attribute Values:* None
 
-__Creator: Harrison, D. and Rubinfeld, D.L.__
+*Creator: Harrison, D. and Rubinfeld, D.L.*
 
 This is a copy of UCI ML housing dataset.
 http://archive.ics.uci.edu/ml/datasets/Housing
 
 This dataset was taken from the StatLib library which is maintained at Carnegie Mellon University. The Boston house-price data of Harrison, D. and Rubinfeld, D.L. 'Hedonic prices and the demand for clean air', J. Environ. Economics & Management, vol.5, 81-102, 1978. Used in Belsley, Kuh & Welsch, 'Regression diagnostics ...', Wiley, 1980. N.B. Various transformations are used in the table on pages 244-261 of the latter. The Boston house-price data has been used in many machine learning papers that address regression problems.
 
-__References__
+*References*
 - Belsley, Kuh & Welsch, 'Regression diagnostics: Identifying Influential Data and Sources of 
 - Quinlan,R. (1993). Combining Instance-Based and Model-Based Learning. In Proceedings on the 
 - many more! (see http://archive.ics.uci.edu/ml/datasets/Housing)
@@ -69,11 +69,17 @@ RMSE of SGD   = 2.67
 RMSE of GD    = 4.42
 Percentage change in Weight Vectors from GD to SGD = 0.2%
 
-![stkwk](https://github.com/AdroitAnandAI/stockPrediction/blob/master/Images/stkweek.PNG)
+![hc1](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/hc1.PNG)
+
+![hc2](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/hc2.PNG)
+
+![hc3](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/hc3.PNG)
 
 ### Linear Regression using Sklearn’s OLS ###
 
-image
+RMSE = 5.31
+
+![ols](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/ols.PNG)
 
 ### Timing Comparison of SGD, Batch GD, SKlearn & Low K SGD ###
 
@@ -84,28 +90,32 @@ Time Taken by Sklearn OLS is 0.0 seconds
 
 ### Error Comparison of SGD, Batch GD & Sklearn’s OLS ###
 
+![pdf_ols](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/pdf_ols.PNG)
+
+![pdf_gd](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/pdf_gd.PNG)
+
 image
 
 ### Summary ###
 
-image
+![summary](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/summary.PNG)
 
 ### Conclusion ###
 
-1. RMSE of Stochastic Gradient Descent is found to be the lowest compared to other algorithms. The RMSE value would fluctuate a bit because the algorithm is inherently stochastic. But, the low RMSE values signify the method is working fine.
+1. **RMSE of Stochastic Gradient Descent is found to be the lowest** compared to other algorithms. The RMSE value would fluctuate a bit because the algorithm is inherently stochastic. But, the low RMSE values signify the method is working fine.
 
-2. RMSE of SGD < Batch GD < Sklearn’s OLS < Low K SGD. The low batch size increases the error value significantly.
+2. **RMSE of SGD < Batch GD < Sklearn’s OLS < Low K SGD**. The low batch size increases the error value significantly.
 
-3. Timing of Sklearn’s OLS is great but the RMSE value is higher. There is significant reduction in time, when we do Stochastic GD instead of Batch GD.
+3. **Timing of Sklearn’s OLS is great but the RMSE value is higher. There is significant reduction in time, when we do Stochastic GD instead of Batch GD.**
 
-4. The scatter plot of Low K SGD is more perturbed than SGD scatter plot. SGD plot is more linear which signifies less deviation/ error.
+4. The **scatter plot of Low K SGD is more perturbed than SGD scatter plot**. SGD plot is more linear which signifies less deviation/ error.
 
-5. When k is low (we have taken k= 5), then the minimized MSE is found to be high. But when we increase iterations, the minimum cost moves towards optimum. Hence, for lower K, iterations should be more. 
+5. When k is low (we have taken k= 5), then the minimized MSE is found to be high. But when we increase iterations, the minimum cost moves towards optimum. Hence, **for lower K, iterations should be more**. 
 
-6. The PDF of errors in Sklearn’s OLS are centered around 0. From the plot, it is noticed that there are more errors on the -ve side. To improve the solution, we have to reduce the errors on the -ve side.
+6. The **PDF** of errors in Sklearn’s OLS are centered around 0. From the plot, it is noticed that there are more errors on the -ve side. To improve the solution, we have to reduce the errors on the -ve side.
 
-7. The PDF of predicted values are centered around 20. As the error PDF is much to the left of predicted PDF, it is found that the % of errors is acceptable.
+7. The PDF of predicted values are centered around 20. **As the error PDF is much to the left of predicted PDF, it is found that the % of errors is acceptable**.
 
-8. The PDF of errors of Batch Gradient Descent is similar to the Sklearn’s OLS method. Hence, the error in fit should be almost same. However, the PDF error plot of SGD implementation is way off on the negative side, hence errors are more.
+8. The PDF of errors of Batch Gradient Descent is similar to the Sklearn’s OLS method. Hence, the error in fit should be almost same. However, **the PDF error plot of SGD implementation is way off on the negative side, hence errors are more**.
 
 9. The error distribution kdeplot of SGD implementation would become near to Sklean’s method when the batch size(k) of SGD  implementation increases. As we take more points in each iteration, the approximation error would reduce, though it would take more time.
