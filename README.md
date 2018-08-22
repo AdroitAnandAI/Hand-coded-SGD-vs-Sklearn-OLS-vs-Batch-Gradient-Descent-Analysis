@@ -94,7 +94,10 @@ Time Taken by Sklearn OLS is 0.0 seconds <br/>
 
 ![pdf_gd](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/pdf_gd.PNG)
 
-image
+
+PDF of Predicted Variable
+
+![pdf_pv](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/pdf_pv.PNG)
 
 ### Summary ###
 
