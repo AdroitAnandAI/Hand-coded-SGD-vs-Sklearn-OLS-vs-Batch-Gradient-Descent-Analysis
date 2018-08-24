@@ -116,7 +116,7 @@ RMSE LowK SGD = 11.1 <br/>
 RMSE of SGD   = 2.67 <br/>
 RMSE of GD    = 4.42 <br/>
 
-**Percentage change in Weight Vectors from GD to SGD = 0.2% ** <br/>
+***Percentage change in Weight Vectors from GD to SGD = 0.2% ***
 
 ![hc1](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/hc1.PNG)
 
