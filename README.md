@@ -1,7 +1,6 @@
-# Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis #
-## Performance comparison of self-coded Stochastic Gradient Descent vs Sklearn OLS vs Batch Gradient Descent ##
+# Stochastic Gradient Descent vs Batch GD vs Sklearn’s OLS #
 
-### Objective: ###
+## Objective ##
 
 1. **To implement Stochastic Gradient Descent (SGD)** based on how the gradient descent logic works, to minimize the cost so as to find the best fit.
 
@@ -9,7 +8,7 @@
 
 3. **Implement Batch Gradient Descent** to compare the outcome: **both timing as well as data**.
 
-### At a glance ###
+## At a glance ##
 
 1. **Stochastic Gradient Descent (SGD)** is implemented and cost analysis has been down for every 100 iterations. It **has been tested for different batch sizes & iterations, to find out difference in RMSE, graphically depicted using scatter plots**. The formulas used in SGD implementation is given in the report below.
 
@@ -17,11 +16,11 @@
 
 3. The **timing comparison of all the 4 methods:** Batch Gradient Descent, Stochastic GD, low K SGD and Sklearn’s OLS has been done. The **PDF of errors is plotted with kdeplot** to identify the deviation of distribution from actual target value distribution. **The summary of results and conclusion is provided at the end of the report.**
 
-### Data Source: ###
+## Data Source: ##
 
 Boston Dataset from Sklearn Datasets.
 
-### Dataset Details on Boston House Prices ###
+## Dataset Details on Boston House Prices ##
 
 ***Characteristics:***
 
@@ -60,7 +59,7 @@ This dataset was taken from the StatLib library which is maintained at Carnegie 
 - Quinlan,R. (1993). Combining Instance-Based and Model-Based Learning. In Proceedings on the 
 - many more! (see http://archive.ics.uci.edu/ml/datasets/Housing)
 
-### Hand Coding of Stochastic Gradient Descent ###
+## Hand Coding of Stochastic Gradient Descent ##
 
 The error is calculated using the below formula at every iteration. The derivative term, w.r.t. w and b has to be negated on every iteration. Derivate is calculated using this formula at every iteration.
 
@@ -124,20 +123,20 @@ RMSE of GD    = 4.42 <br/>
 
 ![hc3](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/hc3.PNG)
 
-### Linear Regression using Sklearn’s OLS ###
+## Linear Regression using Sklearn’s OLS ##
 
 RMSE = 5.31
 
 ![ols](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/ols.PNG)
 
-### Timing Comparison of SGD, Batch GD, SKlearn & Low K SGD ###
+## Timing Comparison of SGD, Batch GD, SKlearn & Low K SGD ##
 
 Time Taken by Low K SGD is 1.68 seconds when k = 5 <br/>
 Time Taken by SGD is 1.75 seconds when k = 10 <br/>
 Time Taken by Batch GD is 1.96 seconds when k = 339 <br/>
 Time Taken by Sklearn OLS is 0.0 seconds <br/>
 
-### Error Comparison of SGD, Batch GD & Sklearn’s OLS ###
+## Error Comparison of SGD, Batch GD & Sklearn’s OLS ##
 
 ![pdf_ols](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/pdf_ols.PNG)
 
@@ -145,26 +144,28 @@ Time Taken by Sklearn OLS is 0.0 seconds <br/>
 
 ![pdf_pv](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/pdf_pv.PNG)
 
-### Summary ###
+## Summary ##
 
 ![summary](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/summary.PNG)
 
-### Conclusion ###
+## Conclusion ##
 
-1. **RMSE of Stochastic Gradient Descent is found to be the lowest** compared to other algorithms. The RMSE value would fluctuate a bit because the algorithm is inherently stochastic. But, the low RMSE values signify the method is working fine.
+1. The **scatter plot of Stochastic Gradient Descent and Batch Gradient Descent prediction results shows very similar pattern. RMSE values are also almost the same**. Hence, the stochastic variation of gradient descent yields a decent approximation of batch GD, which takes in, all data points in each iteration.
 
-2. **RMSE of SGD < Batch GD < Sklearn’s OLS < Low K SGD**. The low batch size increases the error value significantly.
+2. **RMSE of Stochastic Gradient Descent is found to be the lowest** compared to other algorithms. The RMSE value would fluctuate a bit because the algorithm is inherently stochastic. But, the low RMSE values signify the method is working fine.
 
-3. **Timing of Sklearn’s OLS is great but the RMSE value is higher. There is significant reduction in time, when we do Stochastic GD instead of Batch GD.**
+3. **RMSE of SGD < Batch GD < Sklearn’s OLS < Low K SGD**. The low batch size increases the error value significantly.
 
-4. The **scatter plot of Low K SGD is more perturbed than SGD scatter plot**. SGD plot is more linear which signifies less deviation/ error.
+4. **Timing of Sklearn’s OLS is great but the RMSE value is higher. There is significant reduction in time, when we do Stochastic GD instead of Batch GD.**
 
-5. When k is low (we have taken k= 5), then the minimized MSE is found to be high. But when we increase iterations, the minimum cost moves towards optimum. Hence, **for lower K, iterations should be more**. 
+5. The **scatter plot of Low K SGD is more perturbed than SGD scatter plot**. SGD plot is more linear which signifies less deviation/ error.
 
-6. The **PDF** of errors in Sklearn’s OLS are centered around 0. From the plot, it is noticed that there are more errors on the -ve side. To improve the solution, we have to reduce the errors on the -ve side.
+6. When k is low (we have taken k= 5), then the minimized MSE is found to be high. But when we increase iterations, the minimum cost moves towards optimum. Hence, **for lower K, iterations should be more**. 
 
-7. The PDF of predicted values are centered around 20. **As the error PDF is much to the left of predicted PDF, it is found that the % of errors is acceptable**.
+7. The **PDF** of errors in Sklearn’s OLS are centered around 0. From the plot, it is noticed that there are more errors on the -ve side. To improve the solution, we have to reduce the errors on the -ve side.
 
-8. The PDF of errors of Batch Gradient Descent is similar to the Sklearn’s OLS method. Hence, the error in fit should be almost same. However, **the PDF error plot of SGD implementation is way off on the negative side, hence errors are more**.
+8. The PDF of predicted values are centered around 20. **As the error PDF is much to the left of predicted PDF, it is found that the % of errors is acceptable**.
 
-9. The error distribution kdeplot of SGD implementation would become near to Sklean’s method when the batch size(k) of SGD  implementation increases. As we take more points in each iteration, the approximation error would reduce, though it would take more time.
+9. The PDF of errors of Batch Gradient Descent is similar to the Sklearn’s OLS method. Hence, the error in fit should be almost same. However, **the PDF error plot of SGD implementation is way off on the negative side, hence errors are more**.
+
+10. The error distribution kdeplot of SGD implementation would become near to Sklean’s method when the batch size(k) of SGD  implementation increases. As we take more points in each iteration, the approximation error would reduce, though it would take more time.
