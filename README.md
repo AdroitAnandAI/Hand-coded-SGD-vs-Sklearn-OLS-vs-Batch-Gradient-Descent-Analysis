@@ -3,17 +3,19 @@
 
 ### Objective: ###
 
-1. To implement Stochastic Gradient Descent (SGD) based on how the gradient descent logic works, to minimize the cost so as to find the best fit.
-2. Compare and analyse the difference in outcome between self implementation of SGD vs sklearn’s Ordinary Least Squares (OLS) implementation. You may use graphical plots to do the same.
-3. Implement Batch Gradient Descent to compare the outcome: both timing as well as data.
+1. **To implement Stochastic Gradient Descent (SGD)** based on how the gradient descent logic works, to minimize the cost so as to find the best fit.
+
+2. Compare and analyse the difference in outcome between **self implementation of SGD vs sklearn’s Ordinary Least Squares (OLS)** implementation. You may use graphical plots to do the same.
+
+3. **Implement Batch Gradient Descent** to compare the outcome: **both timing as well as data**.
 
 ### At a glance ###
 
-**Stochastic Gradient Descent (SGD)** is implemented and cost analysis has been down for every 100 iterations. It **has been tested for different batch sizes & iterations, to find out difference in RMSE, graphically depicted using scatter plots**. The formulas used in SGD implementation is given in the report below.
+1. **Stochastic Gradient Descent (SGD)** is implemented and cost analysis has been down for every 100 iterations. It **has been tested for different batch sizes & iterations, to find out difference in RMSE, graphically depicted using scatter plots**. The formulas used in SGD implementation is given in the report below.
 
-**Sklearn’s Ordinary Least Squares (OLS) is used on the same dataset and timing and error evaluation has been done** for head to head comparison. **Batch Gradient Descent algorithm** is also implemented for comparison.
+2. **Sklearn’s Ordinary Least Squares (OLS) is used on the same dataset and timing and error evaluation has been done** for head to head comparison. **Batch Gradient Descent algorithm** is also implemented for comparison.
 
-The **timing comparison of all the 4 methods:** Batch Gradient Descent, Stochastic GD, low K SGD and Sklearn’s OLS has been done. The **PDF of errors is plotted with kdeplot** to identify the deviation of distribution from actual target value distribution. **The summary of results and conclusion is provided at the end of the report.**
+3. The **timing comparison of all the 4 methods:** Batch Gradient Descent, Stochastic GD, low K SGD and Sklearn’s OLS has been done. The **PDF of errors is plotted with kdeplot** to identify the deviation of distribution from actual target value distribution. **The summary of results and conclusion is provided at the end of the report.**
 
 ### Data Source: ###
 
@@ -21,13 +23,13 @@ Boston Dataset from Sklearn Datasets.
 
 ### Dataset Details on Boston House Prices ###
 
-*Characteristics:*
+***Characteristics:***
 
 Number of Instances: 506
 Number of Attributes: 13 numeric/categorical predictive
 Median Value (attribute 14) is usually the target
 
-*Attribute Information (in order):*
+***Attribute Information (in order):***
 
 - CRIM per capita crime rate by town
 - ZN proportion of residential land zoned for lots over 25,000 sq.ft.
@@ -44,16 +46,16 @@ Median Value (attribute 14) is usually the target
 - LSTAT % lower status of the population
 - MEDV Median value of owner-occupied homes in $1000's
 
-*Missing Attribute Values:* None
+***Missing Attribute Values:*** None
 
-*Creator: Harrison, D. and Rubinfeld, D.L.*
+***Creator: Harrison, D. and Rubinfeld, D.L.***
 
 This is a copy of UCI ML housing dataset.
 http://archive.ics.uci.edu/ml/datasets/Housing
 
 This dataset was taken from the StatLib library which is maintained at Carnegie Mellon University. The Boston house-price data of Harrison, D. and Rubinfeld, D.L. 'Hedonic prices and the demand for clean air', J. Environ. Economics & Management, vol.5, 81-102, 1978. Used in Belsley, Kuh & Welsch, 'Regression diagnostics ...', Wiley, 1980. N.B. Various transformations are used in the table on pages 244-261 of the latter. The Boston house-price data has been used in many machine learning papers that address regression problems.
 
-*References*
+***References***
 - Belsley, Kuh & Welsch, 'Regression diagnostics: Identifying Influential Data and Sources of 
 - Quinlan,R. (1993). Combining Instance-Based and Model-Based Learning. In Proceedings on the 
 - many more! (see http://archive.ics.uci.edu/ml/datasets/Housing)
@@ -64,10 +66,57 @@ The error is calculated using the below formula at every iteration. The derivati
 
 Then we negate the parameter gradient from each parameter, adjusted by learning rate. We use this formula, params = params - learning rate * params_gradient.
 
+**Low K, Stochastic Gradient Descent: Cost Analysis** <br/>
+Cost of iteration #100 = 72.81 <br/>
+Cost of iteration #200 = 59.0 <br/>
+Cost of iteration #300 = 159.28 <br/>
+Cost of iteration #400 = 17.85 <br/>
+Cost of iteration #500 = 1934.25 <br/>
+Cost of iteration #600 = 30.67 <br/>
+Cost of iteration #700 = 394.6 <br/>
+Cost of iteration #800 = 575.87 <br/>
+Cost of iteration #900 = 11.97 <br/>
+Cost of iteration #1000 = 98.75 <br/>
+Cost of iteration #1100 = 190.68 <br/>
+Cost of iteration #1200 = 13.14 <br/>
+Cost of iteration #1300 = 7.5 <br/>
+Cost of iteration #1400 = 85.12 <br/>
+Cost of iteration #1500 = 49.15 <br/>
+Cost of iteration #1600 = 54.78 <br/>
+Cost of iteration #1700 = 10.78 <br/>
+Cost of iteration #1800 = 10.68 <br/>
+Cost of iteration #1900 = 30.55 <br/>
+Cost of iteration #2000 = 123.18 <br/>
+
+**Stochastic Gradient Descent: Cost Analysis** <br/>
+Cost of iteration #100 = 14.76 <br/>
+Cost of iteration #200 = 52.03 <br/>
+Cost of iteration #300 = 232.23 <br/>
+Cost of iteration #400 = 31.24 <br/>
+Cost of iteration #500 = 15.02 <br/>
+Cost of iteration #600 = 4.38 <br/>
+Cost of iteration #700 = 24.46 <br/>
+Cost of iteration #800 = 22.23 <br/>
+Cost of iteration #900 = 9.26 <br/>
+Cost of iteration #1000 = 7.12 <br/>
+
+**Batch Gradient Descent: Cost Analysis** <br/>
+Iteration #100 Cost = 19.69 <br/>
+Iteration #200 Cost = 19.56 <br/>
+Iteration #300 Cost = 19.55 <br/>
+Iteration #400 Cost = 19.55 <br/>
+Iteration #500 Cost = 19.55 <br/>
+Iteration #600 Cost = 19.55 <br/>
+Iteration #700 Cost = 19.55 <br/>
+Iteration #800 Cost = 19.55 <br/>
+Iteration #900 Cost = 19.55 <br/>
+Iteration #1000 Cost = 19.55 <br/>
+
 RMSE LowK SGD = 11.1 <br/>
 RMSE of SGD   = 2.67 <br/>
 RMSE of GD    = 4.42 <br/>
-Percentage change in Weight Vectors from GD to SGD = 0.2% <br/>
+
+**Percentage change in Weight Vectors from GD to SGD = 0.2% ** <br/>
 
 ![hc1](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/hc1.PNG)
 
@@ -93,9 +142,6 @@ Time Taken by Sklearn OLS is 0.0 seconds <br/>
 ![pdf_ols](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/pdf_ols.PNG)
 
 ![pdf_gd](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/pdf_gd.PNG)
-
-
-PDF of Predicted Variable
 
 ![pdf_pv](https://github.com/AdroitAnandAI/Hand-coded-SGD-vs-Sklearn-OLS-vs-Batch-Gradient-Descent-Analysis/blob/master/images/pdf_pv.PNG)
 
